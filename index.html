@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resmi Yazisma — Sawyan Bank VIP Heyeti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root{--bg-deep:#0a0a0f;--bg-card:#111118;--gold:#c8a44e;--gold-light:#e8cc7a;--gold-dark:#9a7a2e;--gold-glow:rgba(200,164,78,0.15);--text-primary:#f0ece2;--text-secondary:#b0aaa0;--text-muted:#5e5a55;--border:rgba(200,164,78,0.12);--border-strong:rgba(200,164,78,0.3)}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:var(--bg-deep);color:var(--text-primary);min-height:100vh;overflow-x:hidden}
+        .bg-pattern{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+        .bg-pattern::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse 600px 400px at 20% 20%,rgba(200,164,78,0.04) 0%,transparent 70%),radial-gradient(ellipse 500px 500px at 80% 80%,rgba(200,164,78,0.03) 0%,transparent 70%),radial-gradient(ellipse 400px 300px at 50% 50%,rgba(200,164,78,0.02) 0%,transparent 70%);animation:bgShift 20s ease-in-out infinite}
+        .bg-pattern::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(200,164,78,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(200,164,78,0.015) 1px,transparent 1px);background-size:80px 80px}
+        @keyframes bgShift{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(30px,-20px) rotate(1deg)}66%{transform:translate(-20px,15px) rotate(-0.5deg)}}
+        .particles-container{position:fixed;inset:0;z-index:0;pointer-events:none}
+        .particle{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;opacity:0;animation:particleFloat linear infinite}
+        @keyframes particleFloat{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:0.6}90%{opacity:0.3}100%{opacity:0;transform:translateY(-10vh) scale(1)}}
+        .glow-cursor{position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(200,164,78,0.04) 0%,transparent 70%);pointer-events:none;z-index:0;transform:translate(-50%,-50%)}
+        .main-container{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:40px 20px 60px}
+        .top-bar{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:48px;opacity:0;animation:fadeSlideDown 0.8s ease forwards 0.2s}
+        .top-line{flex:1;max-width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+        .top-bar-text{font-size:11px;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gold);text-align:center}
+        .top-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg);flex-shrink:0}
+        .invitee-photo-wrap{text-align:center;margin-bottom:28px;opacity:0;animation:fadeSlideUp 1s ease forwards 0.3s}
+        .invitee-photo{width:200px;height:200px;border-radius:50%;border:3px solid var(--border-strong);object-fit:cover;display:inline-block;box-shadow:0 0 60px rgba(200,164,78,0.12),0 0 120px rgba(200,164,78,0.06);transition:border-color 0.4s,box-shadow 0.4s;image-rendering:-webkit-optimize-contrast;image-rendering:crisp-edges}
+        .invitee-photo:hover{border-color:var(--gold);box-shadow:0 0 80px rgba(200,164,78,0.2),0 0 140px rgba(200,164,78,0.1)}
+        .name-card{text-align:center;margin-bottom:40px;opacity:0;animation:fadeSlideUp 1s ease forwards 0.4s}
+        .name-main{font-family:'Playfair Display',serif;font-size:clamp(24px,5vw,38px);font-weight:700;color:var(--text-primary);margin-bottom:12px;line-height:1.3}
+        .name-blessing{font-size:17px;color:var(--gold);font-weight:500;margin-bottom:16px}
+        .name-separator{width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto}
+        .delegation-badge-wrap{text-align:center;margin-bottom:40px}
+        .delegation-badge{display:inline-flex;align-items:center;gap:10px;background:var(--gold-glow);border:1px solid var(--border);border-radius:100px;padding:10px 24px;opacity:0;animation:fadeSlideUp 1s ease forwards 0.6s}
+        .delegation-badge .badge-icon{width:8px;height:8px;background:var(--gold);border-radius:50%;animation:pulse 2s ease-in-out infinite}
+        @keyframes pulse{0%,100%{opacity:0.5;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+        .delegation-badge span{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold-light)}
+        .delegation-badge .badge-sep{color:var(--text-muted)}
+        .letter-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;padding:clamp(28px,5vw,48px);margin-bottom:40px;position:relative;overflow:hidden;opacity:0;animation:fadeSlideUp 1s ease forwards 0.8s}
+        .letter-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.5}
+        .letter-card::after{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(200,164,78,0.03) 0%,transparent 70%);pointer-events:none}
+        .letter-greeting{font-size:15px;color:var(--gold);text-align:center;margin-bottom:28px;line-height:1.8;font-weight:500;font-style:italic}
+        .letter-body{font-size:15px;line-height:2.2;color:var(--text-secondary);font-weight:400}
+        .letter-body p{margin-bottom:20px}
+        .letter-body p:last-child{margin-bottom:0}
+        .letter-closing{font-size:15px;color:var(--text-secondary);line-height:2.2;margin-top:20px;font-weight:400}
+        .letter-signature{text-align:center;margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+        .letter-signature span{font-size:14px;color:var(--gold);letter-spacing:1px;font-weight:500}
+        .delegation-section{margin-bottom:48px;opacity:0;animation:fadeSlideUp 1s ease forwards 1s}
+        .section-header{text-align:center;margin-bottom:28px}
+        .section-title{font-size:16px;font-weight:600;color:var(--text-primary)}
+        .section-diamond{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px}
+        .section-diamond .line{width:40px;height:1px;background:linear-gradient(90deg,transparent,var(--border-strong))}
+        .section-diamond .line:last-child{background:linear-gradient(90deg,var(--border-strong),transparent)}
+        .section-diamond .diamond{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+        .delegation-group-photo{margin-bottom:24px;text-align:center;opacity:0;animation:fadeSlideUp 1s ease forwards 0.95s}
+        .delegation-group-photo img{width:100%;max-width:620px;border-radius:16px;border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,0.3)}
+        .video-section{margin-bottom:48px;opacity:0;animation:fadeSlideUp 1s ease forwards 1.2s}
+        .video-wrapper{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color 0.4s,box-shadow 0.4s}
+        .video-wrapper.playing{border-color:var(--border-strong);box-shadow:0 12px 40px rgba(200,164,78,0.08)}
+        .video-stage{position:relative;width:100%;height:0;padding-bottom:56.25%;background:#080810;overflow:hidden}
+        .video-cover{position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;cursor:pointer;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a1a24 0%,#0f0f16 100%)}
+        .video-grid-bg{position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(rgba(200,164,78,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,164,78,0.03) 1px,transparent 1px);background-size:40px 40px;opacity:0.5}
+        .play-btn-wrap{position:relative;z-index:5}
+        .play-button{width:80px;height:80px;border-radius:50%;background:rgba(200,164,78,0.15);border:2px solid rgba(200,164,78,0.4);display:flex;align-items:center;justify-content:center;transition:all 0.4s;margin:0 auto}
+        .video-cover:hover .play-button{background:rgba(200,164,78,0.25);border-color:var(--gold);transform:scale(1.12);box-shadow:0 0 50px rgba(200,164,78,0.25)}
+        .play-button i{font-size:28px;color:var(--gold-light);margin-left:4px}
+        .play-ripple{position:absolute;top:50%;left:50%;width:80px;height:80px;margin:-40px 0 0 -40px;border-radius:50%;border:1px solid rgba(200,164,78,0.3);animation:ripple 2s ease-out infinite}
+        .play-ripple:nth-child(2){animation-delay:0.5s}
+        @keyframes ripple{0%{transform:scale(1);opacity:0.5}100%{transform:scale(2.2);opacity:0}}
+        .video-embed{position:absolute;top:0;left:0;width:100%;height:100%;z-index:5}
+        .video-embed iframe{width:100%;height:100%;border:none;display:block}
+        .video-info{padding:20px 24px;display:flex;align-items:center;justify-content:space-between}
+        .video-title{font-size:14px;font-weight:500;color:var(--text-primary)}
+        .video-subtitle{font-size:12px;color:var(--text-muted);margin-top:4px}
+        .video-platform{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+        .video-platform i{color:#ff0000;font-size:16px}
+        .fallback-link{display:none;margin-top:12px;text-align:center;padding-bottom:12px}
+        .fallback-link a{color:var(--gold);font-size:13px;text-decoration:underline;text-underline-offset:3px;transition:color 0.3s}
+        .fallback-link a:hover{color:var(--gold-light)}
+        .footer{text-align:center;padding-top:32px;border-top:1px solid var(--border);opacity:0;animation:fadeSlideUp 1s ease forwards 1.4s}
+        .footer-brand{font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+        .footer-brand span{color:var(--text-muted);font-weight:400}
+        .footer-confidential{font-size:11px;color:var(--text-muted);letter-spacing:0.5px}
+        @keyframes fadeSlideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fadeSlideDown{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:translateY(0)}}
+        .page-loader{position:fixed;inset:0;background:var(--bg-deep);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity 0.6s,visibility 0.6s}
+        .page-loader.hidden{opacity:0;visibility:hidden}
+        .loader-diamond{width:12px;height:12px;background:var(--gold);transform:rotate(45deg);animation:loaderPulse 1.2s ease-in-out infinite}
+        @keyframes loaderPulse{0%,100%{transform:rotate(45deg) scale(1);opacity:0.4}50%{transform:rotate(45deg) scale(1.4);opacity:1}}
+        .loader-text{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--text-muted)}
+        @media(max-width:640px){.main-container{padding:24px 16px 40px}.letter-card{padding:24px 20px;border-radius:16px}.video-info{flex-direction:column;align-items:flex-start;gap:8px;padding:16px 20px}.top-bar-text{font-size:9px;letter-spacing:2px}.letter-body,.letter-greeting,.letter-closing{font-size:13px;line-height:2}.invitee-photo{width:160px;height:160px}.play-button{width:64px;height:64px}.play-button i{font-size:22px}.play-ripple{width:64px;height:64px;margin:-32px 0 0 -32px}}
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important}.particle{display:none}}
+    </style>
+</head>
+<body>
+    <div class="page-loader" id="pageLoader"><div class="loader-diamond"></div><div class="loader-text">Yukleniyor</div></div>
+    <div class="glow-cursor" id="glowCursor"></div>
+    <div class="bg-pattern"></div>
+    <div class="particles-container" id="particles"></div>
+    <main class="main-container">
+        <div class="top-bar">
+            <div class="top-line"></div><div class="top-diamond"></div>
+            <span class="top-bar-text">Resmi Yazisma</span><div class="top-diamond"></div>
+            <span class="top-bar-text">Official Correspondence</span><div class="top-diamond"></div>
+            <div class="top-line"></div>
+        </div>
+        <div class="invitee-photo-wrap">
+            <img class="invitee-photo" src="https://static.independent.co.uk/s3fs-public/thumbnails/image/2016/02/17/19/pg-24-erdogan-getty.jpg?quality=100&width=2400&auto=webp" alt="Bilal Recep Tayyip Erdogan">
+        </div>
+        <div class="name-card">
+            <div class="name-main">Sayin Bilal Recep Tayyip Erdogan</div>
+            <div class="name-blessing">Allah O'nu Korusun</div>
+            <div class="name-separator"></div>
+        </div>
+        <div class="delegation-badge-wrap">
+            <div class="delegation-badge">
+                <div class="badge-icon"></div>
+                <span>Sawyan Bank VIP Heyeti</span>
+                <span class="badge-sep">—</span>
+                <span>VIP Delegation of Sawyan Bank</span>
+            </div>
+        </div>
+        <div class="letter-card">
+            <div class="letter-greeting">Selam ve bereket dolu bir saygiyla, ardindan;</div>
+            <div class="letter-body">
+                <p>Birkaq ulkeyi ve merkez bankasini yakindan ilgilendiren, devasa uluslararasi bir ekonomik ve ticari proje hazirligi uzerinde calisan, farkli ulkelerden seckin is insanlari ve uluslararasi bankacilik uzmanlarindan olusan "Uluslararasi bir Ittifak" adina zatialinizle iletisime gecmekten seref duyariz.</p>
+                <p>Belirtmek isteriz ki, bu projenin gerceklestirecegi ekonomik devrim, zatialinizin kiymetli ilgi alanlari ve takdire sayan cabalariyla buyuk olcude ortusmektedir.</p>
+                <p>Su anda is insanlari ve uzmanlardan olusan bir proje heyetimizin Turkiye'de bulunmasi vesilesiyle, bu yakinan ekonomik devrime dair kapsamli bir sunum yapmak ve zatialinizle ortak calisma alanlarini netlestirmek adina tarafimiza kapali bir calisma oturumu gerceklestirmenizden onur duyariz.</p>
+            </div>
+            <div class="letter-closing">En derin saygi ve takdirlerimizin kabulunu arz ederiz,,</div>
+            <div class="letter-signature"><span>Heyet Temsilcileri</span></div>
+        </div>
+        <section class="delegation-section">
+            <div class="section-header">
+                <div class="section-title">Heyet Temsilcileri</div>
+                <div class="section-diamond"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+            </div>
+            <div class="delegation-group-photo">
+                <img src="https://z-cdn-media.chatglm.cn/files/d768ab18-b62d-4c9b-b604-4e86961d4991.jpg?auth_key=1883883246-ad059ade710f46349ab71d6ef26e7277-0-6e7e237831a7bee35f489e1fb9792c2b" alt="Sawyan Bank VIP Heyeti">
+            </div>
+        </section>
+        <section class="video-section">
+            <div class="section-header">
+                <div class="section-title">Tanitim Videosu</div>
+                <div class="section-diamond"><div class="line"></div><div class="diamond"></div><div class="line"></div></div>
+            </div>
+            <div class="video-wrapper" id="videoWrapper">
+                <div class="video-stage">
+                    <div class="video-embed" id="videoEmbed"></div>
+                    <div class="video-cover" id="videoCover">
+                        <div class="video-grid-bg"></div>
+                        <div class="play-btn-wrap">
+                            <div class="play-ripple"></div>
+                            <div class="play-ripple"></div>
+                            <div class="play-button"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <div>
+                        <div class="video-title" id="vidTitle">Izlemek icin tiklayin</div>
+                        <div class="video-subtitle" id="vidSub">YouTube'da acilir</div>
+                    </div>
+                    <div class="video-platform"><i class="fab fa-youtube"></i><span>YouTube</span></div>
+                </div>
+                <div class="fallback-link" id="fallbackLink">
+                    <a href="https://www.youtube.com/watch?v=jA2_2ud86m8&list=PLomHsw1_tXJEXE-lHuVOetIwhNzMUdgmu&index=5" target="_blank" rel="noopener noreferrer">Video yuklenmedi mi? YouTube'da acmak icin tiklayin</a>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="footer-brand">Uluslararasi Ittifak <span>—</span> International Alliance <span>&copy; 2025</span></div>
+            <div class="footer-confidential">Resmi Yazisma — Gizli ve Ozel</div>
+        </footer>
+    </main>
+    <script>
+    (function(){
+        var SRC='https://www.youtube-nocookie.com/embed/jA2_2ud86m8?list=PLomHsw1_tXJEXE-lHuVOetIwhNzMUdgmu&index=5&autoplay=1&rel=0';
+        var LINK='https://www.youtube.com/watch?v=jA2_2ud86m8&list=PLomHsw1_tXJEXE-lHuVOetIwhNzMUdgmu&index=5';
+        var cover=document.getElementById('videoCover');
+        var embed=document.getElementById('videoEmbed');
+        var wrapper=document.getElementById('videoWrapper');
+        var vt=document.getElementById('vidTitle');
+        var vs=document.getElementById('vidSub');
+        var fb=document.getElementById('fallbackLink');
+        function play(){
+            if(window.location.protocol==='file:'){window.open(LINK,'_blank');return}
+            var f=document.createElement('iframe');
+            f.src=SRC;f.setAttribute('allow','autoplay; encrypted-media; fullscreen; picture-in-picture');
+            f.setAttribute('allowfullscreen','');f.frameBorder='0';
+            f.style.cssText='width:100%;height:100%;border:none;display:block;position:absolute;top:0;left:0';
+            embed.appendChild(f);cover.style.display='none';wrapper.classList.add('playing');
+            vt.textContent='Su an oynatiliyor';vs.textContent='YouTube Player';
+            setTimeout(function(){fb.style.display='block'},3000);
+        }
+        cover.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();play()},false);
+        window.addEventListener('load',function(){setTimeout(function(){document.getElementById('pageLoader').classList.add('hidden')},800)});
+        var gc=document.getElementById('glowCursor'),mx=0,my=0,cx=0,cy=0;
+        document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+        (function cl(){cx+=(mx-cx)*0.08;cy+=(my-cy)*0.08;gc.style.left=cx+'px';gc.style.top=cy+'px';requestAnimationFrame(cl)})();
+        var pc=document.getElementById('particles');
+        function mp(){var p=document.createElement('div');p.className='particle';var d=8+Math.random()*12,s=1+Math.random()*2,dl=Math.random()*6;p.style.left=Math.random()*100+'%';p.style.width=s+'px';p.style.height=s+'px';p.style.animationDuration=d+'s';p.style.animationDelay=dl+'s';pc.appendChild(p);setTimeout(function(){if(p.parentNode)p.parentNode.removeChild(p)},(d+dl)*1000)}
+        for(var i=0;i<15;i++)mp();setInterval(function(){if(pc.children.length<20)mp()},1500);
+        if('ontouchstart' in window)gc.style.display='none';
+    })();
+    </script>
+</body>
+</html>
